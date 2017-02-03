@@ -8,7 +8,6 @@ import { GalleryProvider, GalleryModel } from '../../providers/gallery';
 })
 export class GalleryListComponent implements OnInit {
   @Input() eventName ?: string;
-  @Input() isVotable ?: boolean = false;
 
   loading : boolean;
   data    : Array<GalleryModel>;

@@ -1,3 +1,24 @@
 gallery-list {
-
+    .gallery-post {
+        opacity: 0.6;
+        height: 4.8rem;
+        margin: 12px 0px !important;
+        width: 100% !important;
+        ion-avatar img {
+            $avatar-size: 3.2rem;
+            max-width: $avatar-size;
+            max-height: $avatar-size;
+            border-radius: .6rem !important;
+        }
+        button {
+            font-size: 1.4rem;
+            .item-inner {
+                background-image: none !important;
+                padding-right: 16px !important;
+            }
+            ion-icon {
+                font-size: 2.4rem;
+            }
+        }
+    }
 }

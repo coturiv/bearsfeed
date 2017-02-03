@@ -1,31 +1,16 @@
 <ion-header>
 
   <ion-navbar color="secondary">
-    <ion-buttons start>
-      <button ion-button clear small>Categories</button>
-    </ion-buttons>
-    <ion-title>Home</ion-title>
+    <ion-title>BearsFeed</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
-          <ion-icon name="flame"></ion-icon>
-      </button>
-      <button ion-button icon-only>
-          <ion-icon name="trending-up"></ion-icon>
+      <button ion-button icon-only small>
+          <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content>
-  <ion-card class="post">
-    <button ion-item>
-      <ion-avatar item-left>
-        <img src="assets/img/avatar.png" />
-      </ion-avatar>
-      What's up?
-      <ion-icon name="camera" item-right></ion-icon>
-    </button>
-  </ion-card>
+  <gallery-list></gallery-list>
 </ion-content>

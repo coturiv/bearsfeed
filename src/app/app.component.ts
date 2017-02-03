@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
+import { LoginPage } from '../pages/login/login';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class MyApp {
     if (1) {
       this.rootPage = TabsPage;
     } else {
-      this.rootPage = WalkthroughPage;
+      this.rootPage = LoginPage;
     }
   }
 }

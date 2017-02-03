@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TabHomePage } from '../tab-home/tab-home'
-import { TabSearchPage } from '../tab-search/tab-search'
-import { TabChatsPage } from '../tab-chats/tab-chats'
-import { TabActivityPage } from '../tab-activity/tab-activity'
-import { TabProfilePage } from '../tab-profile/tab-profile'
+import { TabHomePage } from '../tab-home/tab-home';
+import { TabExplorePage } from '../tab-explore/tab-explore';
+import { TabNotificationPage } from '../tab-notification/tab-notification';
+import { TabProfilePage } from '../tab-profile/tab-profile';
 
 
 
@@ -15,10 +14,9 @@ import { TabProfilePage } from '../tab-profile/tab-profile'
 export class TabsPage {
 
   tab1Root: any = TabHomePage;
-  tab2Root: any = TabSearchPage;
-  tab3Root: any = TabChatsPage;
-  tab4Root: any = TabActivityPage;
-  tab5Root: any = TabProfilePage;
+  tab2Root: any = TabExplorePage;
+  tab3Root: any = TabNotificationPage;
+  tab4Root: any = TabProfilePage;
 
   constructor(public navCtrl: NavController) {
 
