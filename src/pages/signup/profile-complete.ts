@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { SignupPage } from '../signup/signup';
+
+import { TabsPage } from '../tabs/tabs';
 
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-profile-complete',
+  templateUrl: 'profile-complete.html',
 })
-export class LoginPage {
+export class ProfileCompletePage {
 
   constructor(
     public navCtrl   : NavController, 
@@ -16,8 +17,7 @@ export class LoginPage {
 
   ionViewDidLoad() {}
 
-  doSignup() {
-    this.navCtrl.push(SignupPage);
+  goHome() {
+    this.navCtrl.setRoot(TabsPage);
   }
-
 }

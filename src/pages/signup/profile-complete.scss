@@ -1,4 +1,4 @@
-page-signup {    
+page-profile-complete {    
     ion-content {
         background-image: url('../assets/img/background.jpg');
         background-repeat: no-repeat;
@@ -39,8 +39,17 @@ page-signup {
         }
 
         button {
-            margin-top: 1.2rem !important;
+            margin-top: 1.6rem !important;
             border-radius: 0.8rem !important;
-        }        
+        }
+
+        .profile {
+            text-align: center;
+
+            img {
+                max-width: 120px;
+            }
+        }
+        
     }
 }

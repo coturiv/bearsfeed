@@ -1,18 +1,23 @@
-<!--
-  Generated template for the Login page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+    <form>
+        <ion-list no-lines>
+            <h2 class="title text-center" color="light" padding>Login to your account</h2>
+            <ion-item>                
+                <ion-icon name="person" item-left></ion-icon>
+                <ion-input type="text" placeholder="Username"> </ion-input>                
+            </ion-item>
 
+            <ion-item>
+                <ion-icon name="lock" item-left></ion-icon>
+                <ion-input type="password" placeholder="Password"></ion-input>
+            </ion-item>
+            
+            <button ion-button color="secondary" (click)="doLogin()" block>LOGIN</button>
+            <p color="light" class="text-center">
+                Don't have an account?
+                <a color="light" (click)="doSignup()">Signup.</a>
+            </p>
+            <button ion-button color="light" clear block>Forgot Password?</button>
+        </ion-list>
+    </form>
 </ion-content>

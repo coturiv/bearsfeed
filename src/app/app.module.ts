@@ -10,6 +10,7 @@ import { TabNotificationPage } from '../pages/tab-notification/tab-notification'
 import { TabProfilePage } from '../pages/tab-profile/tab-profile';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { ProfileCompletePage } from '../pages/signup/profile-complete';
 import { PostPage } from '../pages/post/post';
 import { SearchPage } from '../pages/search/search';
 
@@ -31,6 +32,7 @@ let appPages = [
   TabProfilePage,
   LoginPage,
   SignupPage,
+  ProfileCompletePage,
   PostPage,
   SearchPage,
   GalleryListComponent,
