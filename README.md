@@ -2,4 +2,4 @@
 
 _News within Your Community_
 
-<img src="https://github.com/sdey0081/ion-feedly/blob/master/resources/ios/icon@2x.png" />
+<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/ios/icon@2x.png" />
