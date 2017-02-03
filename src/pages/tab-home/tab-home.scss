@@ -1,3 +1,30 @@
 page-tab-home {
+    ion-header {
+        .bar-buttons button {
+            font-size: 1.4rem !important;
+        }
+    }
 
+    ion-content {
+        .post {
+            opacity: 0.6;
+            height: 4.8rem;
+            ion-avatar img {
+                $avatar-size: 3.2rem;
+                max-width: $avatar-size;
+                max-height: $avatar-size;
+                border-radius: .6rem !important;
+            }
+            button {
+                font-size: 1.4rem;
+                .item-inner {
+                    background-image: none !important;
+                    padding-right: 16px !important;
+                }
+                ion-icon {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
 }

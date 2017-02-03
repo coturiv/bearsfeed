@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { TabHomePage } from '../tab-home/tab-home'
+import { TabSearchPage } from '../tab-search/tab-search'
+import { TabChatsPage } from '../tab-chats/tab-chats'
+import { TabActivityPage } from '../tab-activity/tab-activity'
+import { TabProfilePage } from '../tab-profile/tab-profile'
 
-/*
-  Generated class for the Tabs page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+
 @Component({
   selector: 'page-tabs',
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  tab1Root: any = TabHomePage;
+  tab2Root: any = TabSearchPage;
+  tab3Root: any = TabChatsPage;
+  tab4Root: any = TabActivityPage;
+  tab5Root: any = TabProfilePage;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabsPage');
+  constructor(public navCtrl: NavController) {
+
   }
 
 }

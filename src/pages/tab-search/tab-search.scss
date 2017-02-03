@@ -1,3 +1,20 @@
 page-tab-search {
+    ion-header {
+        ion-segment-button {
+            border-radius: 20px !important;
+            max-width: 84px !important;
+        }
 
+        ion-segment-button:last-of-type {
+            margin-left: 24px !important;
+            border-left-width: 1px !important;
+        }
+
+        ion-toolbar {
+            .toolbar-background {
+                background: #fff !important;
+                border: none !important;
+            }
+        }
+    }
 }
