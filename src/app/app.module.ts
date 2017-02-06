@@ -11,13 +11,17 @@ import { TabProfilePage } from '../pages/tab-profile/tab-profile';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfileCompletePage } from '../pages/signup/profile-complete';
-import { PostPage } from '../pages/post/post';
-import { SearchPage } from '../pages/search/search';
+import { GalleryPostPage } from '../pages/gallery-post/gallery-post';
+import { GallerySearchPage } from '../pages/gallery-search/gallery-search';
+import { GalleryCommentPage } from '../pages/gallery-comment/gallery-comment';
 
 //components
 import { GalleryListComponent } from '../components/gallery-list/gallery-list';
 import { GalleryCardComponent } from '../components/gallery-card/gallery-card';
 import { GalleryPosterComponent } from '../components/gallery-poster/gallery-poster';
+import { UserListComponent } from '../components/user-list/user-list';
+import { UserCardComponent } from '../components/user-card/user-card';
+import { LoaderComponent } from '../components/loader/loader';
 import { ReadMoreComponent } from '../components/read-more/read-more';
 
 //providers
@@ -35,11 +39,16 @@ let appPages = [
   LoginPage,
   SignupPage,
   ProfileCompletePage,
-  PostPage,
-  SearchPage,
+  GalleryPostPage,
+  GallerySearchPage,
+  GalleryCommentPage,
+  
   GalleryListComponent,
   GalleryCardComponent,
   GalleryPosterComponent,
+  UserListComponent,
+  UserCardComponent,
+  LoaderComponent,
   ReadMoreComponent
 ];
 

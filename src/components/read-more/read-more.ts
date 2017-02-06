@@ -1,22 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, Input, ElementRef, OnChanges } from '@angular/core';
 
-/*
-  Generated class for the ReadMore component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'read-more',
   templateUrl: 'read-more.html'
 })
-export class ReadMoreComponent {
+export class ReadMoreComponent implements OnChanges {
 
-  text: string;
+  @Input() text      : string;
+  @Input() maxLength : number = 200;
 
-  constructor() {
-    console.log('Hello ReadMore Component');
-    this.text = 'Hello World';
+  currentText : string;
+  hideToggle  : boolean = true;
+  isCollapsed : boolean = true;
+  
+  constructor( private elementRef: ElementRef) {}
+
+  toggleView() {
+    this.isCollapsed = !this.isCollapsed;
+    this.determineView();
   }
 
+  determineView() {
+    if (!this.text)
+      return;
+
+    if (this.text.length <= this.maxLength) {
+      this.currentText = this.text;
+      this.isCollapsed = false;
+      this.hideToggle = true;
+      return;
+    }
+    this.hideToggle = false;
+    this.currentText = (this.isCollapsed) ? this.text.substring(0, this.maxLength) + "..." : this.text;
+  }
+
+  ngOnChanges() {
+    this.determineView();       
+  }
 }

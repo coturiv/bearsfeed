@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, NavParams } from 'ionic-angular';
 
-import { SearchPage } from '../search/search';
+import { GallerySearchPage } from '../gallery-search/gallery-search';
 
 @Component({
   selector: 'page-tab-explore',
@@ -16,7 +16,7 @@ export class TabExplorePage {
   ionViewDidLoad() {}
 
   doPageSearch() {
-    let modal = this.modalCtrl.create(SearchPage);
+    let modal = this.modalCtrl.create(GallerySearchPage);
     modal.present();
   }
 }

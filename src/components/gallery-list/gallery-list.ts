@@ -16,6 +16,14 @@ export class GalleryListComponent implements OnInit {
     public galleryProvider: GalleryProvider
   ) {
     this.data = [];
+    for (let i=0; i<10; i++) {
+      let gallery = {
+        user: 'Benny',
+        avatar: 'assets/img/profile.png',
+        description: 'I \'m benny, experienced cross-platform mobile app developer.',
+      };
+      this.data.push(gallery);
+    }
   }
 
   ngOnInit() {

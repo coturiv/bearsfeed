@@ -1,8 +1,7 @@
 gallery-poster {
     ion-card {
-        opacity: 0.6;
         height: 4.8rem;
-        margin: 12px 0px !important;
+        margin: 0px !important;
         width: 100% !important;
         ion-avatar img {
             $avatar-size: 3.2rem;
@@ -11,8 +10,10 @@ gallery-poster {
             border-radius: .6rem !important;
         }
         button {
+            
             font-size: 1.36rem !important;
             .item-inner {
+                opacity: .6;
                 background-image: none !important;
                 padding-right: 16px !important;
             }

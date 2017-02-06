@@ -1,8 +1,12 @@
-user-card {
+page-gallery-post {
     ion-avatar img {
         $avatar-size: 3.2rem;
         max-width: $avatar-size;
         max-height: $avatar-size;
         border-radius: .6rem !important;
+    }
+    
+    ion-footer button {
+        margin: 0 !important;
     }
 }

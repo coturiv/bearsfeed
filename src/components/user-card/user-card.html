@@ -1,8 +1,19 @@
-<!--
-  Generated template for the UserCard component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
--->
-
-{{text}}
+<ion-card>
+  <ion-item *ngIf="eventName == 'notification'">
+    <ion-avatar item-left>
+      <img [src]="user.avatar" />
+    </ion-avatar>
+    <h3>{{user.fullname}}</h3>
+    <p>{{activity.description}}</p>
+    <button ion-button clear icon-only color="dark" item-right>
+      <ion-icon [name]="activity.icon"></ion-icon>
+    </button>
+  </ion-item>
+  <ion-item *ngIf="eventName == 'people'">
+    <ion-avatar item-left>
+      <img [src]="user.avatar" />
+    </ion-avatar>
+    <h3>{{user.fullname}}</h3>
+    <p>{{user.aboutme}}</p>
+  </ion-item>
+</ion-card>

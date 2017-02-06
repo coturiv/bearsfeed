@@ -4,10 +4,10 @@ import { ViewController, NavParams } from 'ionic-angular';
 
 
 @Component({
-  selector: 'page-search',
-  templateUrl: 'search.html'
+  selector: 'page-gallery-comment',
+  templateUrl: 'gallery-comment.html'
 })
-export class SearchPage {
+export class GalleryCommentPage {
 
   constructor(public viewCtrl: ViewController, public navParams: NavParams) {}
 
@@ -16,4 +16,5 @@ export class SearchPage {
   doCancel() {
     this.viewCtrl.dismiss();
   }
+
 }

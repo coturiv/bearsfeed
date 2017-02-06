@@ -1,4 +1,4 @@
-page-search {
+page-gallery-search {
     ion-header {
         ion-segment-button {
             border-radius: 20px !important;
@@ -16,5 +16,9 @@ page-search {
                 border: none !important;
             }
         }
+    }
+
+    ion-content {
+        background: #edf3f7 !important;
     }
 }

@@ -1,8 +1,4 @@
-<!--
-  Generated template for the ReadMore component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
--->
-
-{{text}}
+<p [innerHTML]="currentText" ></p>
+<button ion-button small color="dark" clear [class.hidden]="hideToggle" (click)="toggleView()" no-padding>
+    Read {{isCollapsed? 'more':'less'}}
+</button>

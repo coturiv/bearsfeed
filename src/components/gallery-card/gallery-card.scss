@@ -1,3 +1,43 @@
 gallery-card {
+    ion-card {
+        margin: 12px 0px !important;
+        width: 100% !important;
+    }
+    ion-avatar img {
+        $avatar-size: 3.2rem;
+        max-width: $avatar-size;
+        max-height: $avatar-size;
+        border-radius: .6rem !important;
+    }
 
-}
+    ion-card-content {
+        padding-bottom: 0 !important;
+    }
+
+    .vote-bar {
+        position: absolute;
+        right: 1.6rem;
+        width: 4.8rem;
+        margin-top: -3.6rem;
+
+        h4 {
+            text-align: center;
+            margin-left: 2px;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+    }
+
+    .gallery-preview img {
+        object-fit: cover;
+    }
+
+    .comment-bar {
+        padding: 0 16px;
+        border-top: solid 0.55px #ccc;
+
+        button {
+            text-transform: uppercase;
+        }
+    }
+} 

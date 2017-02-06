@@ -30,7 +30,11 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222
 );
-
+ion-title, .toolbar-title {
+  text-transform: uppercase !important;
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+}
 
 .text-center {
   text-align: center;

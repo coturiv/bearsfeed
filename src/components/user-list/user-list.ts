@@ -14,10 +14,21 @@ export class UserListComponent implements OnInit {
   loading : boolean;
   data    : Array<any>;
 
-  constructor() {}
+  constructor(
+    private userProvider   : UserProvider,
+    private notifyProvider : NotificationProvider
+  ) {
+    this.data = [];
+  }
 
   ngOnInit() {
+    if (this.eventName == 'people') {
+      this.data = this.userProvider.allUsers;
+    }
 
+    if (this.eventName == 'notification') {
+      this.data = this.notifyProvider.allNotifications;
+    }
   }
 
 }

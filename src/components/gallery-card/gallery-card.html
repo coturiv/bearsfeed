@@ -1,8 +1,48 @@
-<!--
-  Generated template for the GalleryCard component.
+<ion-card>
 
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
--->
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="https://lh3.googleusercontent.com/-0RIVaKN5Q18/WHe2fttQEjI/AAAAAAAAADk/ia8cKM9bqj8S-TkdBTXw6Ljn9jIUxthTACEw/w140-h139-p/hire-web-developer.png">
+    </ion-avatar>
+    <h2>Benny Chan</h2>
+  </ion-item>
 
-{{text}}
+  <ion-card-content>
+    <ion-row>
+      <ion-col width-90>
+        <read-more [text]="data.text" [maxLength]="100"></read-more>
+      </ion-col>
+      <ion-col>
+        <div class="vote-bar">
+          <button ion-button clear icon-only color="dark" (click)="upVote(data)">
+            <ion-icon name="arrow-up"></ion-icon>
+          </button>
+          <h4 ion-text color="dark">{{data.likeCount}}</h4>
+          <button ion-button clear icon-only color="dark" (click)="downVote(data)">
+            <ion-icon name="arrow-down"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>    
+  </ion-card-content>
+
+  <div class="gallery-preview" padding>
+    <img src="assets/img/background.jpg">
+  </div>
+  
+  <ion-row class="comment-bar">
+    <ion-col class="text-center">
+      <button ion-button icon-left color="dark" small clear (click)="doComment(item)">
+        <ion-icon name="ios-text-outline"></ion-icon>
+        <div>comment</div>
+      </button>
+    </ion-col>
+    <ion-col class="text-center">
+      <button ion-button icon-left color="dark" small clear (click)="doShare(item)">
+        <ion-icon name="ios-open-outline"></ion-icon>
+        <div>share</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

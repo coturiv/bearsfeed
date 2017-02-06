@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 
-import { PostPage } from '../../pages/post/post';
+import { GalleryPostPage } from '../../pages/gallery-post/gallery-post';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class GalleryPosterComponent {
   ) {}
 
   onPagePost() {
-    let modal = this.modalCtrl.create(PostPage);
+    let modal = this.modalCtrl.create(GalleryPostPage);
     modal.present();
   }
 }

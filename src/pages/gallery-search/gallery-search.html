@@ -7,15 +7,16 @@
     </ion-buttons>
   </ion-navbar>
   <ion-toolbar>
-      <ion-segment color="secondary">
-          <ion-segment-button value="a">People
+      <ion-segment color="secondary" [(ngModel)]="side">
+          <ion-segment-button (ionSelect)="onSegmentSelected('people')" value="people">People
           </ion-segment-button>
-          <ion-segment-button value="b">Posts
+          <ion-segment-button (ionSelect)="onSegmentSelected('post')" value="post">Post
           </ion-segment-button>
       </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <gallery-list *ngIf="side=='post'"></gallery-list>
+  <user-list [eventName]="'people'" *ngIf="side=='people'"></user-list>
 </ion-content>

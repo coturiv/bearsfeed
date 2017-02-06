@@ -1,3 +1,17 @@
 page-tab-explore {
-    
+    ion-content, ion-item-divider {
+        background: #edf3f7 !important;
+    }
+
+    ion-avatar img {
+        $avatar-size: 3.2rem;
+        max-width: $avatar-size;
+        max-height: $avatar-size;
+        border-radius: .4rem !important;
+    }
+
+    ion-label {
+        font-size: 16px !important;
+        white-space: normal;
+    }
 }

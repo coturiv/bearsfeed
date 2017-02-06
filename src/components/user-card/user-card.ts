@@ -1,22 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserModel } from '../../providers/user';
+import { ActivityModel, activityList } from '../../providers/notification';
 
-/*
-  Generated class for the UserCard component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'user-card',
   templateUrl: 'user-card.html'
 })
-export class UserCardComponent {
+export class UserCardComponent implements OnInit {
+  @Input() item      : any;
+  @Input() eventName : string;
 
-  text: string;
+  user     ?: UserModel;
+  activity ?: ActivityModel;
 
   constructor() {
-    console.log('Hello UserCard Component');
-    this.text = 'Hello World';
   }
 
+  ngOnInit() {
+    if (this.eventName === 'notification') {
+      this.user     = this.item.user;
+      this.activity = activityList.filter(activity => activity.name == this.item.activity)[0];
+    }
+
+    if (this.eventName === 'people') {
+      this.user = this.item;
+    }
+  }
 }

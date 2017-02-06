@@ -1,0 +1,36 @@
+<ion-header>
+  
+  <ion-navbar color="secondary">
+    <ion-buttons start>
+      <button ion-button small clear (click)="doCancel()">Cancel</button>
+    </ion-buttons>
+    <ion-title>Create A Post</ion-title>
+    <ion-buttons end>
+      <button ion-button small clear (click)="doPost()">Post</button>
+    </ion-buttons>
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/img/profile.png" />
+      </ion-avatar>
+      <h3>Benny Chan</h3>
+    </ion-item>
+    <ion-item>
+      <ion-textarea rows="3" placeholder="What's on your mind?"></ion-textarea>
+    </ion-item>
+    <img src="assets/img/background.jpg">
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button color="dark" clear icon-only block (click)="doCapture()">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>

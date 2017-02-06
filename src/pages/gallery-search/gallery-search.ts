@@ -4,24 +4,22 @@ import { ViewController, NavParams } from 'ionic-angular';
 
 
 @Component({
-  selector: 'page-post',
-  templateUrl: 'post.html'
+  selector: 'page-gallery-search',
+  templateUrl: 'gallery-search.html'
 })
-export class PostPage {
+export class GallerySearchPage {
+  side: string = 'post';
 
   constructor(public viewCtrl: ViewController, public navParams: NavParams) {}
 
   ionViewDidLoad() {}
 
-  doPost() {
-    /**
-     * do post....
-     */
-    this.viewCtrl.dismiss();
+  onSegmentSelected(side: string) {
+    this.side = side;
   }
 
   doCancel() {
     this.viewCtrl.dismiss();
   }
-
 }
+
