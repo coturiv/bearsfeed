@@ -17,10 +17,12 @@ import { SearchPage } from '../pages/search/search';
 //components
 import { GalleryListComponent } from '../components/gallery-list/gallery-list';
 import { GalleryCardComponent } from '../components/gallery-card/gallery-card';
+import { GalleryPosterComponent } from '../components/gallery-poster/gallery-poster';
 import { ReadMoreComponent } from '../components/read-more/read-more';
 
 //providers
 import { GalleryProvider } from '../providers/gallery';
+import { NotificationProvider } from '../providers/notification';
 import { UserProvider } from '../providers/user';
 
 let appPages = [
@@ -37,6 +39,7 @@ let appPages = [
   SearchPage,
   GalleryListComponent,
   GalleryCardComponent,
+  GalleryPosterComponent,
   ReadMoreComponent
 ];
 
@@ -49,6 +52,7 @@ let appPages = [
   entryComponents: appPages,
   providers: [
     GalleryProvider,
+    NotificationProvider,
     UserProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

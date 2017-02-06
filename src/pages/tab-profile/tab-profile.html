@@ -1,12 +1,26 @@
 <ion-header>
 
   <ion-navbar color="secondary">
-    <ion-title>TabProfile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div class="overview">
+    <h3 ion-text color="light" class="text-center">Hello, Benny Chan!</h3>
+  </div>
+  
+  <gallery-poster></gallery-poster>
+  <ion-card class="bio">
+    <ion-card-content>
+      <button ion-button small color="dark" outline>Edit</button>
+      <button ion-button small color="dark" outline *ngIf="isBioEditing">Save</button>
+      <ion-card-title>
+        Bio
+      </ion-card-title>
+      Hi, I'm Benny, this is a short bio about myself.
+    </ion-card-content>
+  </ion-card>
 </ion-content>

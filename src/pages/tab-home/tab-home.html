@@ -3,7 +3,7 @@
   <ion-navbar color="secondary">
     <ion-title>BearsFeed</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only small>
+      <button ion-button icon-only small (click)="doPageSearch()">
           <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
@@ -12,5 +12,6 @@
 </ion-header>
 
 <ion-content>
+  <gallery-poster></gallery-poster>
   <gallery-list></gallery-list>
 </ion-content>

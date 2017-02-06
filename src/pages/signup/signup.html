@@ -1,7 +1,7 @@
 <ion-content padding>
     <form>
         <ion-list no-lines>
-            <h2 class="title text-center" color="light" padding>Create an account</h2>
+            <h2 ion-text class="title text-center" color="light" padding>Create an account</h2>
             <ion-item>                
                 <ion-icon name="mail" item-left></ion-icon>
                 <ion-input type="text" placeholder="Email"> </ion-input>                
@@ -23,8 +23,8 @@
             </ion-item>
             
             <button ion-button color="secondary" (click)="doContinue()" block>CONTINUE</button>
-            <p color="light" class="text-center">
-                Have an account?<a color="light" (click)="doLogin()">Login.</a>
+            <p ion-text color="light" class="text-center">
+                Have an account?<a ion-text color="light" (click)="doPageLogin()">Login.</a>
             </p>
         </ion-list>
     </form>

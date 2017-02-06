@@ -17,8 +17,8 @@ export class SignupPage {
   doContinue() {
     this.navCtrl.push(ProfileCompletePage);
   }
-  
-  doLogin() {
+
+  doPageLogin() {
     this.navCtrl.pop();
   }
 }

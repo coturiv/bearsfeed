@@ -1,16 +1,14 @@
 <ion-header>
 
   <ion-navbar color="secondary">
-    <ion-searchbar></ion-searchbar>
+    <ion-title>Explore</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only small (click)="doPageSearch()">
+          <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-  <ion-toolbar>
-        <ion-segment color="secondary">
-            <ion-segment-button value="a">People
-            </ion-segment-button>
-            <ion-segment-button value="b">Posts
-            </ion-segment-button>
-        </ion-segment>
-    </ion-toolbar>
+
 </ion-header>
 
 <ion-content padding>

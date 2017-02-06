@@ -7,6 +7,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tab-profile.html'
 })
 export class TabProfilePage {
+  isBioEditing: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
