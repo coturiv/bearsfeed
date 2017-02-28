@@ -1,5 +1,17 @@
 page-tab-notification {
     ion-content {
         background: #edf3f7 !important;
+        ion-list {
+            text-align: center;
+            padding-top: 40% !important;
+            font-family: "Lato";
+            color: #555555;
+        }
+        button {
+            margin-top: 30px !important;
+            ion-icon {
+                font-size: 2.4rem;
+            }
+        }
     }
 }

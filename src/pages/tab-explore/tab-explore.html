@@ -14,17 +14,24 @@
 <ion-content>
   <ion-item-group no-lines>
     <ion-item-divider>FEATURED</ion-item-divider>
-    <ion-item><ion-avatar item-left>
+    <ion-item (click)="doJoin()">
+      <ion-avatar item-left>
         <img src="assets/img/bearfeet.png" />
       </ion-avatar>
       Tap here to join Last Bear Standing!
+    </ion-item>
+    <ion-item (click)="doShopping()">
+      <ion-avatar item-left>
+        <img src="assets/img/shopping-128.png" />
+      </ion-avatar>
+      Start shopping on All New Berkshire Store
     </ion-item>
   </ion-item-group>
   <ion-item-group>
     <ion-item-divider>FOLLOW US</ion-item-divider>
     <button ion-item>
       <ion-avatar item-left>
-        <img src="assets/img/snapchat-128.png" />
+        <img src="assets/img/snapchat-128.jpg" />
       </ion-avatar>
       SnapChat
     </button>

@@ -7,6 +7,14 @@
 </ion-header>
 
 
-<ion-content>
-  <user-list [eventName]="'notification'"></user-list>
+<ion-content padding>
+    <user-list [eventName]="'notification'" *ngIf="data && data.length > 0"></user-list>
+    <ion-list nolines *ngIf="!data || (data && data.length > 0)">
+        <h4>Post a special moment on BearsFeed!</h4>
+        Share your community's every day moments with photos, thoughts and more.
+        <button ion-button icon-left color="secondary" block (click)="pressPostAMoment()">
+          <ion-icon name="aperture"></ion-icon>
+          Post a Moment
+        </button>
+    </ion-list>
 </ion-content>

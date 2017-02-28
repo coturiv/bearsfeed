@@ -1,28 +1,28 @@
 <ion-content padding>
-    <form>
+    <form [formGroup]="form" (ngSubmit)="doSignup(form)">
         <ion-list no-lines>
             <h2 ion-text class="title text-center" color="light" padding>Create an account</h2>
             <ion-item>                
                 <ion-icon name="mail" item-left></ion-icon>
-                <ion-input type="text" placeholder="Email"> </ion-input>                
+                <ion-input formControlName="email" type="text" placeholder="Email"> </ion-input>                
             </ion-item>
 
             <ion-item>                
                 <ion-icon name="person" item-left></ion-icon>
-                <ion-input type="text" placeholder="Username"> </ion-input>                
+                <ion-input formControlName="username" type="text" placeholder="Username"> </ion-input>                
             </ion-item>
 
             <ion-item>
                 <ion-icon name="lock" item-left></ion-icon>
-                <ion-input type="password" placeholder="Password"></ion-input>
+                <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-icon name="lock" item-left></ion-icon>
-                <ion-input type="password" placeholder="Confirm Password"></ion-input>
+                <ion-input formControlName="passwordconfirm" type="password" placeholder="Confirm Password"></ion-input>
             </ion-item>
             
-            <button ion-button color="secondary" (click)="doContinue()" block>CONTINUE</button>
+            <button ion-button color="light" type="submit" block outline>CONTINUE</button>
             <p ion-text color="light" class="text-center">
                 Have an account?<a ion-text color="light" (click)="doPageLogin()">Login.</a>
             </p>

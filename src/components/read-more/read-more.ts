@@ -28,6 +28,7 @@ export class ReadMoreComponent implements OnChanges {
       this.currentText = this.text;
       this.isCollapsed = false;
       this.hideToggle = true;
+      console.log(555);
       return;
     }
     this.hideToggle = false;

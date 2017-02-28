@@ -1,24 +1,24 @@
 <ion-card>
 
   <ion-item>
-    <ion-avatar item-left>
-      <img src="https://lh3.googleusercontent.com/-0RIVaKN5Q18/WHe2fttQEjI/AAAAAAAAADk/ia8cKM9bqj8S-TkdBTXw6Ljn9jIUxthTACEw/w140-h139-p/hire-web-developer.png">
+    <ion-avatar item-left (click)="onProfile()" >
+      <img [src]="(user | async)?.photo || 'assets/img/profile.png'" />
     </ion-avatar>
-    <h2>Benny Chan</h2>
+    <h2>{{(user | async)?.username}}</h2>
   </ion-item>
 
   <ion-card-content>
     <ion-row>
       <ion-col width-90>
-        <read-more [text]="data.text" [maxLength]="100"></read-more>
+        <read-more [text]="item.title" [maxLength]="100"></read-more>
       </ion-col>
       <ion-col>
         <div class="vote-bar">
-          <button ion-button clear icon-only color="dark" (click)="upVote(data)">
+          <button ion-button clear small icon-only color="dark" (click)="upVote(item)">
             <ion-icon name="arrow-up"></ion-icon>
           </button>
-          <h4 ion-text color="dark">{{data.likeCount}}</h4>
-          <button ion-button clear icon-only color="dark" (click)="downVote(data)">
+          <h4 ion-text color="dark">{{item.likeCount ? item.likeCount : 0}}</h4>
+          <button ion-button clear small icon-only color="dark" (click)="downVote(item)">
             <ion-icon name="arrow-down"></ion-icon>
           </button>
         </div>
@@ -26,8 +26,8 @@
     </ion-row>    
   </ion-card-content>
 
-  <div class="gallery-preview" padding>
-    <img src="assets/img/background.jpg">
+  <div class="gallery-preview" padding *ngIf="item.photo">
+    <img [src]="item.photo" (click)="pressPhoto(item)">
   </div>
   
   <ion-row class="comment-bar">

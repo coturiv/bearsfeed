@@ -18,6 +18,8 @@ export class TabsPage {
   tab3Root: any = TabNotificationPage;
   tab4Root: any = TabProfilePage;
 
+  notifyCount = 0;
+
   constructor(public navCtrl: NavController) {
 
   }

@@ -1,9 +1,9 @@
 <ion-card>
   <ion-item *ngIf="eventName == 'notification'">
     <ion-avatar item-left>
-      <img [src]="user.avatar" />
+      <img [src]="user.photo" />
     </ion-avatar>
-    <h3>{{user.fullname}}</h3>
+    <h3>{{user.username}}</h3>
     <p>{{activity.description}}</p>
     <button ion-button clear icon-only color="dark" item-right>
       <ion-icon [name]="activity.icon"></ion-icon>
@@ -11,9 +11,9 @@
   </ion-item>
   <ion-item *ngIf="eventName == 'people'">
     <ion-avatar item-left>
-      <img [src]="user.avatar" />
+      <img [src]="user.photo" />
     </ion-avatar>
-    <h3>{{user.fullname}}</h3>
-    <p>{{user.aboutme}}</p>
+    <h3>{{user.username}}</h3>
+    <p>{{user.bio}}</p>
   </ion-item>
 </ion-card>

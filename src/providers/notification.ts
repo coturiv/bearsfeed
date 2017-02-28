@@ -3,6 +3,8 @@ import 'rxjs/add/operator/map';
 
 import { UserModel, UserProvider } from './user';
 
+import { AngularFire } from 'angularfire2';
+
 export class NotificationModel {
   id        ?: string;
   activity  ?: string;
@@ -28,7 +30,8 @@ export class NotificationProvider {
   data: Array<NotificationModel>;
 
   constructor(
-    private userProvider : UserProvider
+    private userProvider : UserProvider,
+    public af: AngularFire,
   ) {}
 
   get allNotifications(): Array<NotificationModel> {
@@ -46,5 +49,13 @@ export class NotificationProvider {
     }
     
     return this.data;
+  }
+
+  get badgeCounts() {
+    return this.userProvider.currentUser.flatMap(user => {
+      return this.af.database.list('notifications/' + user.$key).map(notifications =>{
+        return notifications.filter(notification => notification.hasRead !== true);
+      });
+    });
   }
 }

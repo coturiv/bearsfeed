@@ -1,5 +1,10 @@
 page-tab-home {
     ion-content {
         background: #edf3f7 !important;
+
+        gallery-poster ion-card {
+            margin-top: 14px !important;
+            font-family: "Lato";
+        }
     }
 }

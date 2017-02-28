@@ -5,10 +5,14 @@
       <button ion-button small clear (click)="doCancel()">Cancel</button>
     </ion-buttons>
     <ion-title>Comment</ion-title>
+    <ion-buttons end>
+      <button ion-button small clear (click)="doSave()">Save</button>
+    </ion-buttons>
   </ion-navbar>
   
 </ion-header>
 
 <ion-content>
-
+  <ion-textarea [(ngModel)]="comment" rows="5" placeholder="Type a comment here."></ion-textarea>
+  <!--<ion-input [(ngModel)]="comment" placeholder="Type a comment here." focus></ion-input>-->
 </ion-content>

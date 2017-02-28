@@ -1,4 +1,4 @@
 <p [innerHTML]="currentText" ></p>
-<button ion-button small color="dark" clear [class.hidden]="hideToggle" (click)="toggleView()" no-padding>
+<button ion-button small color="dark" clear (click)="toggleView()" *ngIf="!hideToggle" no-padding>
     Read {{isCollapsed? 'more':'less'}}
 </button>

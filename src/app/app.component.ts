@@ -3,7 +3,9 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
+import { WelcomePage } from '../pages/welcome/welcome';
+
+import { UserProvider } from '../providers/user';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   rootPage: any;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, public userProvider: UserProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -20,10 +22,12 @@ export class MyApp {
       Splashscreen.hide();
     });
 
-    if (!1) {
-      this.rootPage = TabsPage;
-    } else {
-      this.rootPage = LoginPage;
-    }
+    this.userProvider.getAuth().first().subscribe(user => {
+      this.rootPage = (!!user) ? TabsPage : WelcomePage;
+      console.log('========= Current User ===========');
+      console.log(user);
+    }, (error) => {
+      this.rootPage = WelcomePage;
+    })
   }
 }

@@ -2,6 +2,11 @@
 
   <ion-navbar color="secondary">
     <ion-title>Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only (click)="pressEditProfile()" *ngIf="isMe">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -9,19 +14,18 @@
 
 <ion-content>
   <div class="overview">
-    <h3 ion-text color="light" class="text-center">Hello, Benny Chan!</h3>
+    <h3 ion-text color="light" class="text-center" *ngIf="user.username">Hello, {{user.username}}!</h3>
   </div>
   
-  <gallery-poster></gallery-poster>
+  <gallery-poster *ngIf="isMe"></gallery-poster>
   <ion-card class="bio">
     <ion-card-content>
-      <button ion-button small color="dark" outline>Edit</button>
-      <button ion-button small color="dark" outline *ngIf="isBioEditing">Save</button>
+      <button ion-button small color="dark" (click)="editBio()" outline *ngIf="isMe" >Edit</button>
       <ion-card-title>
         Bio
       </ion-card-title>
-      Hi, I'm Benny, this is a short bio about myself.
+      {{user.bio}}
     </ion-card-content>
   </ion-card>
-  <gallery-list></gallery-list>
+  <gallery-list *ngIf="user" [user]="user"></gallery-list>
 </ion-content>

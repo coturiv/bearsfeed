@@ -17,14 +17,14 @@
   <ion-list no-lines>
     <ion-item>
       <ion-avatar item-left>
-        <img src="assets/img/profile.png" />
+        <img [src]="user.photo || 'assets/img/profile.png'" />
       </ion-avatar>
-      <h3>Benny Chan</h3>
+      <h3>{{user.username}}</h3>
     </ion-item>
     <ion-item>
-      <ion-textarea rows="3" placeholder="What's on your mind?"></ion-textarea>
+      <ion-textarea [(ngModel)]="gallery.title" rows="3" placeholder="What's on your mind?"></ion-textarea>
     </ion-item>
-    <img src="assets/img/background.jpg">
+    <img [src]="gallery.photo || 'assets/img/blank.png'">
   </ion-list>
 </ion-content>
 <ion-footer>

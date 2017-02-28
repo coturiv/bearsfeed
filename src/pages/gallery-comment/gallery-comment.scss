@@ -1,3 +1,11 @@
 page-gallery-comment {
-
+    ion-content {
+        ion-textarea {
+            padding-left: 14px !important;
+            padding-top: 6px !important;
+            background: #FAFAFA;
+        }
+        
+        font-family: "Lato";
+    }
 }

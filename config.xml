@@ -87,4 +87,15 @@
   <plugin name="cordova-plugin-device" spec="1.1.4"/>
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.1"/>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+  <plugin name="cordova-plugin-camera" spec="~2.3.1">
+      <variable name="CAMERA_USAGE_DESCRIPTION" value=" " />
+      <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
+  </plugin>
+  <plugin name="cordova-plugin-file" spec="~4.3.1" />
+  <icon src="resources/ios/icon/icon-small@3x.png" />
+  <plugin name="cordova-plugin-x-socialsharing" spec="~5.1.6" />
+  <plugin name="cordova-plugin-email" spec="~1.2.6" />
+  <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
+  <plugin name="cordova-sqlite-storage" spec="~2.0.2" />
+  <plugin name="com-sarriaroman-photoviewer" spec="~1.1.10" />
 </widget>

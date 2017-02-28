@@ -1,23 +1,26 @@
 <ion-content padding>
-    <form>
+    <ion-icon name="arrow-back" color="light" (click)="doBack()"></ion-icon>
+
+    <form [formGroup]="form">
         <ion-list no-lines>
-            <h2 ion-text class="title text-center" color="light" padding>Login to your account</h2>
+            <h1 ion-text class="title text-center" color="light">BeersFeed</h1>
+            <p class="subtitle text-center">News within Your Community</p>
             <ion-item>                
-                <ion-icon name="person" item-left></ion-icon>
-                <ion-input type="text" placeholder="Username"> </ion-input>                
+                <ion-icon name="mail" item-left></ion-icon>
+                <ion-input formControlName="email" type="email" placeholder="Email Address"> </ion-input>                
             </ion-item>
 
             <ion-item>
                 <ion-icon name="lock" item-left></ion-icon>
-                <ion-input type="password" placeholder="Password"></ion-input>
+                <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
             </ion-item>
             
-            <button ion-button color="secondary" (click)="doLogin()" block>LOGIN</button>
+            <button ion-button color="light" (click)="doLogin(form)" block outline>LOGIN</button>
             <p ion-text color="light" class="text-center">
                 Don't have an account?
                 <a ion-text color="light" (click)="doPageSignup()">Signup.</a>
             </p>
-            <button ion-button color="light" clear block>Forgot Password?</button>
+            <button ion-button color="light" (click)="doForgotPassword()" clear block>Forgot Password?</button>
         </ion-list>
     </form>
 </ion-content>

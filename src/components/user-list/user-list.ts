@@ -23,12 +23,13 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     if (this.eventName == 'people') {
-      this.data = this.userProvider.allUsers;
+      this.userProvider.allUsers.subscribe((users) => {
+        this.data = users;
+      });
     }
 
     if (this.eventName == 'notification') {
       this.data = this.notifyProvider.allNotifications;
     }
   }
-
 }

@@ -8,26 +8,19 @@ import { GalleryProvider, GalleryModel } from '../../providers/gallery';
 })
 export class GalleryListComponent implements OnInit {
   @Input() eventName ?: string;
+  @Input() user      ?: any;
 
   loading : boolean;
-  data    : Array<GalleryModel>;
+  data    : any;
 
   constructor(
     public galleryProvider: GalleryProvider
-  ) {
-    this.data = [];
-    for (let i=0; i<10; i++) {
-      let gallery = {
-        user: 'Benny',
-        avatar: 'assets/img/profile.png',
-        description: 'I \'m benny, experienced cross-platform mobile app developer.',
-      };
-      this.data.push(gallery);
-    }
-  }
+  ) {}
 
   ngOnInit() {
-
+    this.data = this.galleryProvider.getGalleries(this.user && this.user.uid);
+    this.loading = true;
+    this.data.subscribe(_=>this.loading = false);
   }
 
 }
