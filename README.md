@@ -17,13 +17,12 @@ _News within Your Community_
 ### App Preview
 Live At: https://bfeed-app.firebaseapp.com
 
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/login.png" width="24.5%" />
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/signup.png" width="24.5%" />
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/profile_complete.png" width="24.5%" />
+<img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_1" width="24.5%" />
+<img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_2" width="24.5%" />
+<img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_3" width="24.5%" />
 
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/home.png" width="24.5%" />
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/explore.png" width="24.5%" />
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/notification.png" width="24.5%" />
-<img src="https://github.com/sdey0081/bearsfeed/blob/master/resources/screenshots/profile.png" width="24.5%" />
+<img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_4" width="24.5%" />
+<img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_5" width="24.5%" />
+<img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_6" width="24.5%" />
 
 _App is in development, will be added more screenshots once done._
