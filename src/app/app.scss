@@ -16,9 +16,17 @@
 // automatically applied to the <body> element in the app.
 
 ion-navbar {
-    font-family: "Lato";
+    // font-family: "Lato";
 }
 button {
-    font-family: "Lato";
+    // font-family: "Lato";
     font-style: "bold";
+}
+.toolbar-title-ios {
+    text-transform: capitalize !important;
+    // font-family: "Lato" !important;
+    font-size: 1.8rem !important;
+}
+.back-button-text {
+    display: none !important;
 }

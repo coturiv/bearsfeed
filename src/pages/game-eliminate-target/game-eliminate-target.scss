@@ -1,0 +1,21 @@
+page-game-eliminate-target {
+    ion-content {
+        background-image: url('../assets/img/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        ion-list {
+            margin-top: 20px !important;
+            
+            ion-avatar img {
+                $avatar-size: 3.2rem;
+                max-width: $avatar-size;
+                max-height: $avatar-size;
+                border-radius: .6rem !important;
+            }
+        }
+        
+
+    }
+    
+}

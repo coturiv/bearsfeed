@@ -12,6 +12,8 @@ import { TabProfilePage } from '../pages/tab-profile/tab-profile';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { SignupEmailPage } from '../pages/signup/signup-email';
+import { SignupPasswordPage } from '../pages/signup/signup-password';
 import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { ProfileCompletePage } from '../pages/signup/profile-complete';
@@ -21,6 +23,11 @@ import { GalleryCommentPage } from '../pages/gallery-comment/gallery-comment';
 import { ChangePasswordPage } from '../pages/change-password/change-password';
 import { ChangeProfilePicturePage } from '../pages/change-profile-picture/change-profile-picture';
 import { PicturePreviewPage} from '../pages/picture-preview/picture-preview';
+import { GameMainPage } from '../pages/game-main/game-main';
+import { GameEliminatePage } from '../pages/game-eliminate/game-eliminate';
+import { GameEliminateTargetPage } from '../pages/game-eliminate-target/game-eliminate-target';
+import { GameManagementPage } from '../pages/game-management/game-management';
+import { GameEliminateSuccessPage } from '../pages/game-eliminate-success/game-eliminate-success';
 
 //components
 import { GalleryListComponent } from '../components/gallery-list/gallery-list';
@@ -40,14 +47,16 @@ import { NotificationProvider } from '../providers/notification';
 import { UserProvider } from '../providers/user';
 import { GameProvider } from '../providers/game';
 
+import { RelativeTime } from '../pipes/relative-time';
+
 import { AngularFireModule } from 'angularfire2';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCEu6DQteiQJeHB6aE0mNb2bjswvqyQFP8",
+    apiKey: "YOUR API KEY",
     authDomain: "bfeed-app.firebaseapp.com",
     databaseURL: "https://bfeed-app.firebaseio.com",
     storageBucket: "bfeed-app.appspot.com",
-    messagingSenderId: "44392317767"
+    messagingSenderId: ""
 }
 
 let appPages = [
@@ -60,13 +69,20 @@ let appPages = [
   WelcomePage,
   LoginPage,
   SignupPage,
+  SignupEmailPage,
+  SignupPasswordPage,
   ForgotPasswordPage,
   ProfileEditPage,
   ProfileCompletePage,
   GalleryPostPage,
   GallerySearchPage,
   GalleryCommentPage,
-  
+  GameMainPage,
+  GameEliminatePage,
+  GameEliminateTargetPage,
+  GameManagementPage,
+  GameEliminateSuccessPage,
+
   GalleryListComponent,
   GalleryCardComponent,
   GalleryPosterComponent,
@@ -84,6 +100,7 @@ let appPages = [
   declarations: [
     appPages,
     FocusDirective,
+    RelativeTime,
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -97,6 +114,8 @@ let appPages = [
     NotificationProvider,
     UserProvider,
     GameProvider,
+
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

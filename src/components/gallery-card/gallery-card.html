@@ -17,7 +17,7 @@
           <button ion-button clear small icon-only color="dark" (click)="upVote(item)">
             <ion-icon name="arrow-up"></ion-icon>
           </button>
-          <h4 ion-text color="dark">{{item.likeCount ? item.likeCount : 0}}</h4>
+          <h1 ion-text color="dark">{{item.likeCount ? item.likeCount : 0}}</h1>
           <button ion-button clear small icon-only color="dark" (click)="downVote(item)">
             <ion-icon name="arrow-down"></ion-icon>
           </button>
@@ -31,16 +31,20 @@
   </div>
   
   <ion-row class="comment-bar">
-    <ion-col class="text-center">
-      <button ion-button icon-left color="dark" small clear (click)="doComment(item)">
-        <ion-icon name="ios-text-outline"></ion-icon>
-        <div>comment</div>
-      </button>
+    <ion-col class="text-left">
+      <ion-icon name="ios-chatboxes-outline"></ion-icon>
+      <span *ngIf="commentCount > 1">{{commentCount}} comments</span>
+      <span *ngIf="commentCount <= 1">{{commentCount}} comment</span>
     </ion-col>
-    <ion-col class="text-center">
-      <button ion-button icon-left color="dark" small clear (click)="doShare(item)">
-        <ion-icon name="ios-open-outline"></ion-icon>
-        <div>share</div>
+    <ion-col class="text-right">
+      <ion-icon name="time-outline"></ion-icon> {{item.createdAt | relativeTime}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="reply">
+      <button ion-button icon-left color="dark" small clear (click)="doComment(item)">
+          <ion-icon name="ios-text-outline"></ion-icon>
+          Reply
       </button>
     </ion-col>
   </ion-row>

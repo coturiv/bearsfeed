@@ -1,0 +1,60 @@
+page-game-main {
+    ion-content {
+        background-image: url('../assets/img/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        ion-list {
+            margin-top: 30% !important;
+            
+            ion-item {
+                background: transparent !important;
+                // font-family: "Lato" !important;
+                color: #FFFFFF !important;
+                text-align: center !important;
+                img.icon {
+                    width: 40px;
+                    height: 40px;
+                }
+                img.avatar {
+                    object-fit: cover;
+                    overflow: hidden;
+                    border-radius: 8px;
+                    width: 120px;
+                    height: 120px;
+                    border: solid 2px;
+                }
+                ion-col.icon {
+                    text-align: right;
+                }
+                ion-col.text {
+                    text-align: left;
+                }
+                p {
+                    color: #FFFFFF !important;
+                    // font-family: "Lato";
+                    font-size: 1.6rem !important;
+                }
+                button {
+                    height: 40px !important;
+                    font-size: 1.8rem !important;
+                }
+                a.underline {
+                    color: #FFFFFF !important;
+                    // font-family: "Lato";
+                    text-decoration: underline;
+                }
+
+            }
+            ion-item.targetname {
+                font-size: 2.8rem !important;
+                .label-ios {
+                    white-space: normal !important;
+                }
+            }
+        }
+
+    }
+    
+
+}

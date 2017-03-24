@@ -12,14 +12,17 @@ export class UserCardComponent implements OnInit {
 
   user     ?: UserModel;
   activity ?: ActivityModel;
+  notification ?: any;
 
   constructor() {
   }
 
   ngOnInit() {
     if (this.eventName === 'notification') {
-      this.user     = this.item.user;
-      this.activity = activityList.filter(activity => activity.name == this.item.activity)[0];
+      this.notification = this.item;
+      // this.user     = this.item.user;
+      // this.activity = activityList.filter(activity => activity.name == this.item.activity)[0];
+      
     }
 
     if (this.eventName === 'people') {

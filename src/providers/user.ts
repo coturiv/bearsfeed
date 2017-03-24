@@ -18,8 +18,9 @@ export class UserModel {
   birthday  ?: string;
   language  ?: string;
   phone     ?: string;
-  aboutme   ?: string;
+  bio       ?: string;
   status    ?: string;
+  admin     ?: boolean;
 }
 
 
@@ -52,7 +53,7 @@ export class UserProvider {
   }
 
   getUser(uid?: string) {
-    console.log(uid);
+    // console.log(uid);
     return this.af.database.object('users/' + uid);
   }
 
@@ -90,16 +91,28 @@ export class UserProvider {
         email    : user.email,
         password : user.password
       }).then(authData => {
-        this.uploadFile(user.photo).then(res => {
+        if (user.photo) {
+          this.uploadFile(user.photo).then(res => {
+            this.af.database.object('users/' + authData.uid).set({
+              uid      : authData.uid || authData.auth.uid,
+              email    : user.email,
+              username : user.username,
+              password : user.password,
+              bio  : user.bio,
+              photo: res.downloadURL,
+              createdAt: firebase.database['ServerValue']['TIMESTAMP']
+            }).then(_=>resolve(authData.auth), error=> reject(error));
+          });
+        } else {
           this.af.database.object('users/' + authData.uid).set({
+            uid      : authData.uid || authData.auth.uid,
             email    : user.email,
             username : user.username,
             password : user.password,
             bio  : user.bio,
-            photo: res.downloadURL,
             createdAt: firebase.database['ServerValue']['TIMESTAMP']
-          }).then(_=>resolve(), error=> reject(error));
-        });
+          }).then(_=>resolve(authData.auth), error=> reject(error));
+        }
       });
     });
   }
@@ -107,6 +120,16 @@ export class UserProvider {
   changePassword(password: string): firebase.Promise<void> {
       let currentUser = firebase.auth().currentUser;
       return currentUser.updatePassword(password);
+  }
+ 
+  changeProfilePhoto(user: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.uploadFile(user.photo).then(res => {
+          this.af.database.object('users/' + user.uid).update({
+            photo: res.downloadURL,
+          }).then(_=> resolve(), error=> reject(error));
+        }, error => reject(error));
+    });
   }
 
   updateBio(bio: string) {
@@ -122,7 +145,7 @@ export class UserProvider {
     return new Promise((resolve, reject) => {
       this.getBlob(path).then(blob => {
         let filename = path.split('/').pop();
-        console.log(blob);
+        // console.log(blob);
         firebase.storage().ref()
                           .child('profiles/' + filename)
                           .put(blob)
@@ -155,6 +178,19 @@ export class UserProvider {
 
   resetPassword(email: string) {
     return firebase.auth().sendPasswordResetEmail(email);
+  }
+
+  updateOneSignalId(id: string) {
+    this.getAuth().subscribe(auth => {
+        this.af.database.object('users/' + auth.uid).update({oneSignalId: id})
+          .then(_=> {
+            console.log("Registered One Signal Id");
+          }, (error)=> {
+            console.log("Failed Registered One Signal Id");
+          });
+      }, (error) => {
+            console.log("Failed Get User Authenticate");
+          });
   }
 
 }

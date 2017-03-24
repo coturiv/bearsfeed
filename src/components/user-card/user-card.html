@@ -1,12 +1,14 @@
 <ion-card>
   <ion-item *ngIf="eventName == 'notification'">
     <ion-avatar item-left>
-      <img [src]="user.photo" />
+      <img [src]="notification.photo || 'assets/img/profile.png'" />
     </ion-avatar>
-    <h3>{{user.username}}</h3>
-    <p>{{activity.description}}</p>
+    <h3>{{notification.senderUsername}}</h3>
+    <p>{{notification.message}}</p>
     <button ion-button clear icon-only color="dark" item-right>
-      <ion-icon [name]="activity.icon"></ion-icon>
+      <ion-icon name="chatboxes" *ngIf="notification.type == 10"></ion-icon>
+      <ion-icon name="arrow-round-up" *ngIf="notification.type == 20"></ion-icon>
+      <ion-icon name="arrow-round-down" *ngIf="notification.type == 21"></ion-icon>
     </button>
   </ion-item>
   <ion-item *ngIf="eventName == 'people'">

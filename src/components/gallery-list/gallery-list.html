@@ -1,3 +1,5 @@
+<!--<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+</ion-refresher>-->
 <loader *ngIf="loading"></loader>
-
 <gallery-card  *ngFor="let item of data | async" [item]="item"></gallery-card>

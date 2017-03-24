@@ -2,7 +2,10 @@ gallery-card {
     ion-card {
         margin: 12px 0px !important;
         width: 100% !important;
-        font-family: "Lato";
+        // font-family: "Lato" !important;
+    }
+    h2 {
+        font-size: 2.0rem !important;
     }
     ion-avatar img {
         $avatar-size: 3.2rem;
@@ -13,7 +16,11 @@ gallery-card {
 
     ion-card-content {
         padding-bottom: 0 !important;
-        font-family: "Lato";
+        // font-family: "Lato";
+    }
+
+    ion-col.reply {
+        text-align: center !important;
     }
 
     .vote-bar {
@@ -21,25 +28,43 @@ gallery-card {
         right: 0.8rem;
         width: 4.8rem;
         margin-top: -4.6rem;
-
-        h4 {
-            text-align: center;
-            margin-left: -1.6rem;
+        text-align: center !important;
+        h1 {
+            // text-align: center;
+            // margin-left: -1.6rem;
             font-weight: 600;
-            font-size: 1.4rem;
+            font-size: 2.4rem;
         }
     }
 
     .gallery-preview img {
         object-fit: cover;
+        border-radius: 10px;
+        text-align: center;
+        width : 70%;
+        position: relative;
+        margin: 0 auto;
     }
 
     .comment-bar {
         padding: 0 16px;
-        border-top: solid 0.55px #ccc;
+        border-bottom: solid 0.55px #ccc;
 
         button {
-            text-transform: uppercase;
+            // text-transform: uppercase;
         }
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-middle {
+        padding-top: 13px;
+        vertical-align: middle;
     }
 } 

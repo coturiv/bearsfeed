@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Platform, ActionSheetController, LoadingController } from 'ionic-angular';
+import { 
+  NavController, 
+  NavParams, 
+  Platform, 
+  ActionSheetController, 
+  LoadingController, 
+  ToastController,
+  App,
+} from 'ionic-angular';
 import { Camera } from 'ionic-native';
 import { Storage } from '@ionic/storage';
 import { 
@@ -9,7 +17,7 @@ import {
 
 import { TabsPage } from '../tabs/tabs';
 
-import { UserProvider } from '../../providers/user';
+import { UserProvider, UserModel } from '../../providers/user';
 
 @Component({
   selector: 'page-profile-complete',
@@ -20,18 +28,26 @@ export class ProfileCompletePage {
   submitted : boolean = false;
   base64Image: any;
 
-  user      : any;
+  user      : any = new UserModel();
+  username  : string = '';
+  email     : string = '';
+  password  : string = '';
 
   constructor(
+    public app       : App,
     public navCtrl   : NavController, 
     public navParams : NavParams,
     public platform  : Platform,
     public loadingCtrl  : LoadingController,
+    public toastCtrl : ToastController,
     public userProvider : UserProvider,
     public actionSheetCtrl : ActionSheetController,
     public storage      : Storage
   ) {
-    this.user = this.navParams.get('user');
+    // this.user = this.navParams.get('user');
+    this.user.username = navParams.get('username');
+    this.user.email    = navParams.get('email');
+    this.user.password = navParams.get('password');
 
     this.form = new FormGroup({
       photo : new FormControl(null),
@@ -53,7 +69,7 @@ export class ProfileCompletePage {
         .then(res=> {
           loading.dismiss();
           res.sendEmailVerification();
-          this.navCtrl.setRoot(TabsPage);
+          this.app.getRootNav().setRoot(TabsPage);
           this.storage.ready().then(() => {
             this.storage.set('password', form.value.password);
           });
@@ -63,6 +79,9 @@ export class ProfileCompletePage {
             loading.dismiss();
             console.log('Error: ' + JSON.stringify(error));
         });
+    } else {
+      this.toastCtrl.create({message: 'Please input your bio.', duration: 4500})
+      .present();
     }
   }
 
@@ -82,7 +101,7 @@ export class ProfileCompletePage {
             text : 'Library',
             icon :'images',
             handler : ()=> {
-              this.photoFromCamera().then(imgData => this.form.controls['photo'].setValue(imgData));
+              this.photoFromLibrary().then(imgData => this.form.controls['photo'].setValue(imgData));
             }
           },{
             text: 'Cancel',

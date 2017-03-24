@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-
 import { UserProvider } from './user';
-
+import { NotificationProvider } from './notification';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/first';
 
@@ -16,6 +15,7 @@ export class GalleryModel {
   title    ?: string;
   photo    ?: string;
   userId   ?: string;
+  userOnesignalId ?: string;
   location ?: string;
 }
 
@@ -23,7 +23,13 @@ export class GalleryModel {
 @Injectable()
 export class GalleryProvider {
 
-  constructor(public af: AngularFire, public userProvider: UserProvider) {}
+  constructor(
+    public af: AngularFire, 
+    public userProvider: UserProvider,
+    public notificationProvider: NotificationProvider,
+  ) {
+
+  }
 
   getGalleries( uid?: string ) {
     let galleries = this.af.database.list('galleries');
@@ -66,7 +72,7 @@ export class GalleryProvider {
       window.resolveLocalFileSystemURL(path, (fileEntry)=> {
         fileEntry.file(file => {
           const fileReader = new FileReader();
-          fileReader.onloadend = (res: any) => resolve(new Blob([new Uint8Array(res.target.result)], {type: file.type}));
+          fileReader.onloadend = (res: any) => resolve(new Blob([new Uint8Array(res.target.result)], {type: 'image/jpeg'}));
           fileReader.onerror = (error: any) => reject(error);
           fileReader.readAsArrayBuffer(file);
         });
@@ -92,6 +98,7 @@ export class GalleryProvider {
                 this.af.database.object('galleries/' + gallery.$key).update({likeCount: newCount}),
                 this.af.database.object('gallery_likes/' + gallery.$key).update(like)
               ]).then(_=> resolve(), (error)=>reject(error));
+              this.notificationProvider.addNotification(gallery.userId, gallery.$key, 20);
             });
           }
         });
@@ -114,6 +121,7 @@ export class GalleryProvider {
                 this.af.database.object('galleries/' + gallery.$key).update({likeCount: newCount}),
                 this.af.database.list('gallery_likes/' + gallery.$key).remove(auth.uid)
               ]).then(_=> resolve(), (error)=>reject(error));
+              this.notificationProvider.addNotification(gallery.userId, gallery.$key, 21);
             });
           }
         });
@@ -132,5 +140,15 @@ export class GalleryProvider {
         }).then(_=>resolve(), (error)=>reject(error));
       }, (error)=> reject(error));
     });
+  }
+
+  // get comment newCount
+  getCommentCount(gallery: any): Observable<any> {
+    console.log(gallery);
+    if (gallery != null) {
+      return this.af.database.list('gallery_comments/' + gallery.$key);
+    } else {
+      return null;
+    }
   }
 }

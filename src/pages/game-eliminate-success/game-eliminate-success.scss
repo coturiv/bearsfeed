@@ -1,0 +1,25 @@
+page-game-eliminate-success {
+    ion-content {
+        background:  #13d069 !important;
+        
+        ion-item {
+            background: transparent !important;
+            margin-top: 40% !important;
+            text-align: center !important;
+            // font-family: "Lato" !important;
+            color: #FFFFFF !important;
+            img {
+                object-fit: cover;
+                overflow: hidden;
+                border-radius: 8px;
+                width: 120px;
+                height: 120px;
+            }
+            p {
+                color: #FFFFFF !important;
+                font-size: 2.4rem !important;
+                white-space: normal !important;
+            }
+        }
+    }
+}

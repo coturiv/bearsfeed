@@ -40,9 +40,10 @@ export class ChangeProfilePicturePage {
     public userProvider : UserProvider,
     public actionSheetCtrl : ActionSheetController,
     public toastCtrl    : ToastController
-
   ) {
-    this.user = this.navParams.get('user');
+    userProvider.getAuth().subscribe(auth => {
+      this.user = auth;
+    });
 
     this.form = new FormGroup({
       photo : new FormControl(null),
@@ -61,7 +62,7 @@ export class ChangeProfilePicturePage {
       loading.present();
       this.user.photo = form.value.photo;
       
-      this.userProvider.completeProfile(this.user)
+      this.userProvider.changeProfilePhoto(this.user)
         .then(res=> {
           loading.dismiss();
           this.navCtrl.pop();
@@ -91,7 +92,7 @@ export class ChangeProfilePicturePage {
             text : 'Library',
             icon :'images',
             handler : ()=> {
-              this.photoFromCamera().then(imgData => this.form.controls['photo'].setValue(imgData));
+              this.photoFromLibrary().then(imgData => this.form.controls['photo'].setValue(imgData));
             }
           },{
             text: 'Cancel',

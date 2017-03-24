@@ -29,7 +29,13 @@ export class UserListComponent implements OnInit {
     }
 
     if (this.eventName == 'notification') {
-      this.data = this.notifyProvider.allNotifications;
+      this.notifyProvider.getAllNotifications().subscribe(res => {
+        this.data = res;
+        console.log("+_+_++_+_+_++_+_+_+_+_+_++++_+_+_+");
+      }, error => {
+        console.log("ERROR  +_+_++_+_+_++_+_+_+_+_+_++++_+_+_+");
+      })
+      // this.data = this.notifyProvider.allNotifications;
     }
   }
 }

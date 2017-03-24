@@ -2,14 +2,34 @@
 
   <ion-navbar color="secondary">
     <ion-title>Notification</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="clearNotification()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-    <user-list [eventName]="'notification'" *ngIf="data && data.length > 0"></user-list>
-    <ion-list nolines *ngIf="!data || (data && data.length > 0)">
+<ion-content>
+    <ion-list *ngIf="data && data.length > 0" >
+        <!--<ion-item *ngFor="let item of data">-->
+        <ion-card *ngFor="let item of data" (click)="selectNotification(item)">
+          <ion-item>
+            <ion-avatar item-left >
+              <img [src]="item.photo || 'assets/img/profile.png'" />
+            </ion-avatar>
+            <h2>{{item.senderUsername}}</h2>
+            <p>{{item.message}}</p>
+            <button ion-button clear icon-only color="dark" item-right>
+              <ion-icon name="chatboxes" *ngIf="item.type == 10"></ion-icon>
+              <ion-icon name="arrow-round-up" *ngIf="item.type == 20"></ion-icon>
+              <ion-icon name="arrow-round-down" *ngIf="item.type == 21"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-card>
+        <!--</ion-item>-->
+    </ion-list>
+    <ion-list class = "postGallery" nolines *ngIf="!data || (data && data.length == 0)">
         <h4>Post a special moment on BearsFeed!</h4>
         Share your community's every day moments with photos, thoughts and more.
         <button ion-button icon-left color="secondary" block (click)="pressPostAMoment()">

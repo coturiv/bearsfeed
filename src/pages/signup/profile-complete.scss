@@ -1,16 +1,11 @@
 page-profile-complete {    
     ion-content {
-        background:  #13d069 !important;
+        background:  #edf3f7 !important;
 
         form {
-            margin-top: calc(50% - 112px);
-            padding: 2.4rem;
+            margin-top: calc(18%);
+            padding: 0.0rem;
 
-            .title {
-                padding: 1.4rem;
-                font-weight: 400;
-            }
-            
             p {
                 font-size: 1.4rem;
 
@@ -21,7 +16,7 @@ page-profile-complete {
             }
         }
         ion-item {
-            margin-top: 1.2rem !important;
+            margin-top: 2.0rem !important;
             padding: 0.2rem 0.8rem !important;
             border-radius: 0.8rem !important;
 
@@ -37,7 +32,7 @@ page-profile-complete {
         }
 
         button {
-            margin-top: 1.6rem !important;
+            margin-top: 1.2rem !important;
             border-radius: 0.8rem !important;
         }
 

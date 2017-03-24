@@ -1,0 +1,79 @@
+<!--
+  Generated template for the GameMain page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Last Bear Standing</ion-title>
+    <ion-buttons end *ngIf="!isEliminatedMe || isWinner">
+      <button ion-button clear icon-only (click)="pressTrophy()">
+       <ion-icon name="trophy"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines *ngIf="!isEliminatedMe && !isWinner">
+    <ion-item>
+        <ion-row>
+          <ion-col class="icon" width-33>
+            <img class="icon" src="assets/img/bearsfeedwhite.png">
+          </ion-col>
+          <ion-col class="text">
+            <p>Your scroe : {{score}} </p>
+            <p>Targets Left : {{targetLeft}}</p>
+          </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item class="targetname">
+      Your Target is : {{targetName}}
+    </ion-item>
+    <ion-item>
+      <img class="avatar" *ngIf="targetUser" [src]="targetUser.photo || 'assets/img/profile.png'">
+      <img class="avatar" *ngIf="!targetUser" [src]="'assets/img/profile.png'">
+    </ion-item>
+    <ion-item>
+      <button ion-button 
+              color="secondary" 
+              (click)="pressEliminate()" 
+              block 
+              [disabled]="targetUser==null">
+          Eliminate!
+      </button>
+    </ion-item>
+    <ion-item>
+      Any mistakes? 
+      <a class="underline" (click)="pressEmail()">Email Us</a>
+    </ion-item>
+  </ion-list>
+
+  <!-- Eliminated Alert -->
+  <ion-list no-lines *ngIf="isEliminatedMe && !isWinner">
+    <ion-item class="targetname">
+      Sorry, you have been eliminated!
+    </ion-item>
+    <ion-item>
+      Any mistakes? 
+      <a class="underline" (click)="pressEmail()">Email Us</a>
+    </ion-item>
+  </ion-list>
+
+    <!-- Eliminated Alert -->
+  <ion-list no-lines *ngIf="isWinner">
+    <ion-item class="targetname">
+      Congratulations, you are the Last bear Standing!
+    </ion-item>
+    <ion-item>
+      Any mistakes? 
+      <a class="underline" (click)="pressEmail()">Email Us</a>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

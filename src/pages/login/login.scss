@@ -1,33 +1,41 @@
 page-login {
     ion-content {
         background:  #13d069 !important;
+        div.fullscreen {
+            width: 100% !important;
+            height: 100% !important;
+            padding: 30px 20px;
+        }
 
         ion-list {
             @media (max-width:320px) {
-                margin-top: 25% !important;
+                margin-top: 20% !important;
             }
             @media (min-width: 321px) and (max-width:375px) {
-                margin-top: 35% !important;
+                margin-top: 30% !important;
             }
             @media (min-width: 376px) and (max-width:414px) {
-                margin-top: 40% !important;
+                margin-top: 35% !important;
             }
+        }
+        ion-list.list-ios {
+            margin: -1px 0 0 0;
         }
 
         h1.title {
-            font-family: "Lato" !important;
+            // font-family: "Lato" !important;
             font-size: 4rem !important;
         }
 
         p.subtitle {
             color: #FFFFFF !important;
-            font-family: "Lato" !important;
+            // font-family: "Lato" !important;
             margin-top: -22px !important;
-            margin-bottom: 40%;
+            margin-bottom: 30%;
         }
 
         form {
-            padding: 2.4rem;
+            padding: 1.0rem;
             padding-top: 0rem;
             .title {
                 padding: 1.4rem;
@@ -56,7 +64,7 @@ page-login {
             }
             ion-input .text-input {
                 font-size: 1.4rem !important;
-                font-family: "Lato" !important;
+                // font-family: "Lato" !important;
             }
         }
 

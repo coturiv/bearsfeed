@@ -1,12 +1,28 @@
 page-tab-notification {
     ion-content {
         background: #edf3f7 !important;
-        ion-list {
+        ion-list.postGallery {
             text-align: center;
             padding-top: 40% !important;
-            font-family: "Lato";
+            // font-family: "Lato";
             color: #555555;
         }
+        ion-item {
+            padding: 10px 10px !important;
+            background: transparent;
+            div {
+                background: white;
+            }
+
+            ion-avatar img {
+                $avatar-size: 3.2rem;
+                max-width: $avatar-size;
+                max-height: $avatar-size;
+                border-radius: .6rem !important;
+            }
+        }
+
+
         button {
             margin-top: 30px !important;
             ion-icon {

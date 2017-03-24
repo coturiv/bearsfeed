@@ -1,5 +1,9 @@
 page-welcome {
     ion-content {
+        div.fullscreen {
+            width: 100% !important;
+            height: 100% !important;
+        }
         background:  #13d069 !important;
         ion-list {
             @media (max-width:320px) {
@@ -22,13 +26,13 @@ page-welcome {
         }
 
         h1.title {
-            font-family: "Lato" !important;
+            // font-family: "Lato" !important;
             font-size: 4rem !important;
         }
 
         p.subtitle {
             color: #FFFFFF !important;
-            font-family: "Lato" !important;
+            // font-family: "Lato" !important;
             margin-top: -12px;
             margin-bottom: 40%;
         }
@@ -36,12 +40,12 @@ page-welcome {
         ion-row.privacy {
             padding-top: 14px;
             color: #E9E9E9;
-            font-family: "Lato";
+            // font-family: "Lato";
         }
 
         a.privacy {
             color: #FFFFFF !important;
-            font-family: "Lato";
+            // font-family: "Lato";
             font-weight: 400 !important;
             text-decoration: underline;
         }

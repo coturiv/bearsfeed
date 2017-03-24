@@ -1,3 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding no-bounce>
+    <!--<ion-icon name="arrow-back" color="light" (click)="pressBack()"></ion-icon>-->
+
+    <form [formGroup]="form">
+        <ion-list no-lines>
+            <h3 ion-text class="title text-center" color="secondary">What's Your Name?</h3>
+            <ion-item>                
+                <ion-icon name="contact" item-left></ion-icon>
+                <ion-input formControlName="username" type="text" placeholder="Full Name"> </ion-input>                
+            </ion-item>
+            <button ion-button color="secondary" (click)="pressNext(form)" block>Continue</button>
+        </ion-list>
+    </form>
+</ion-content>
+
+<!--
 <ion-content padding>
     <form [formGroup]="form" (ngSubmit)="doSignup(form)">
         <ion-list no-lines>
@@ -29,4 +53,4 @@
         </ion-list>
     </form>
 </ion-content>
-
+-->

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavParams } from 'ionic-angular';
+import { ModalController, NavParams, /*Events*/ } from 'ionic-angular';
 
 import { GallerySearchPage } from '../gallery-search/gallery-search';
 
@@ -11,7 +11,9 @@ export class TabHomePage {
 
   constructor(
     public modalCtrl : ModalController, 
-    public navParams : NavParams) {}
+    public navParams : NavParams,
+    // public events: Events
+  ) {}
 
   ionViewDidLoad() {}
 
@@ -19,4 +21,8 @@ export class TabHomePage {
     let modal = this.modalCtrl.create(GallerySearchPage);
     modal.present();
   }
+
+  // doRefresh(refresher) {
+  //   this.events.publish('gallery:reload', refresher);
+  // }
 }

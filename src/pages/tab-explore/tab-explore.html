@@ -14,7 +14,7 @@
 <ion-content>
   <ion-item-group no-lines>
     <ion-item-divider>FEATURED</ion-item-divider>
-    <ion-item (click)="doJoin()">
+    <ion-item (click)="doJoinGame()">
       <ion-avatar item-left>
         <img src="assets/img/bearfeet.png" />
       </ion-avatar>
@@ -25,6 +25,12 @@
         <img src="assets/img/shopping-128.png" />
       </ion-avatar>
       Start shopping on All New Berkshire Store
+    </ion-item>
+    <ion-item (click)="pressGameAdmin()" *ngIf="currentUser && currentUser.admin == true">
+      <ion-avatar item-left>
+        <img src="assets/img/admin-128.png" />
+      </ion-avatar>
+      Management Game
     </ion-item>
   </ion-item-group>
   <ion-item-group>

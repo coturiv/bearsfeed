@@ -1,17 +1,24 @@
-<ion-content padding>
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding no-bounce>
     <form [formGroup]="form">
         <ion-list no-lines>
-            <h2 ion-text class="title text-center" color="light" padding>A Little bit about you...</h2>
             <div class="profile">
-                <img [src]="form.value.photo || 'assets/img/Add_Photo.png'">
-                <button ion-button small clear color="light" (click)="onUploadProfile()" >Upload a Profile Picture!</button>
+                <img [src]="form.value.photo || 'assets/img/Add_Photo.png'"><br>
+                <button ion-button small clear color="secondary" (click)="onUploadProfile()" >Upload a Profile Picture</button>
             </div>
             <ion-item>                
                 <ion-icon name="brush" item-left></ion-icon>
                 <ion-input formControlName="bio" type="text" placeholder="Quick Bio"> </ion-input>                
             </ion-item>
             
-            <button ion-button color="light"  (click)="onSubmit(form)" block outline>LET'S GO!</button>
+            <button ion-button color="secondary"  (click)="onSubmit(form)" block>Let's Go!</button>
         </ion-list>
     </form>
 </ion-content>
