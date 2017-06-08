@@ -16,6 +16,7 @@ _News within Your Community_
 
 ### App Preview
 Browser: https://bfeed-app.firebaseapp.com
+
 AppStore: https://itunes.apple.com/us/app/bearsfeed/id1146497623?mt=8
 
 <img src="https://s3.amazonaws.com/ionic-marketplace/ionic-news-app-starter/screenshot_1" width="24.5%" />
