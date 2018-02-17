@@ -24,7 +24,7 @@ export class SignupEmailPage {
     public userProvider : UserProvider
   ) {
     this.form = new FormGroup({
-      email        : new FormControl('', Validators.required),
+      email        : new FormControl('', Validators.compose([Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])),
     });
     this.username = navParams.get('username');
   }
@@ -42,7 +42,7 @@ export class SignupEmailPage {
         email   : form.value.email,
       })
     } else {
-      this.toastCtrl.create({message: 'Please input your email address.', duration: 4500})
+      this.toastCtrl.create({message: 'Please input valid email address.', duration: 4500})
       .present();
     }
   }
